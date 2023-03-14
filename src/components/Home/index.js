@@ -1,14 +1,12 @@
 import {Component} from 'react'
+
 import Cookies from 'js-cookie'
 import Slider from 'react-slick'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Loader from 'react-loader-spinner'
-
-import Header from '../Header'
-import Footer from '../Footer'
-
+import EachBooks from '../EachBooks'
 import './index.css'
 
 const topRatedApiStatuses = {
@@ -21,9 +19,8 @@ const topRatedApiStatuses = {
 const settings = {
   dots: false,
   infinite: false,
-  autoplay: true,
   slidesToScroll: 1,
-  slidesToShow: 4,
+  slidesToShow: 3,
   responsive: [
     {
       breakpoint: 1024,
@@ -93,33 +90,9 @@ class Home extends Component {
 
     return (
       <Slider {...settings}>
-        {topRatedBooks.map(eachBook => {
-          const {id, title, coverPic, authorName} = eachBook
-          const onClickedTopRatedBook = () => {
-            const {history} = this.props
-            history.push(`/books/${id}`)
-          }
-
-          return (
-            <div className="top-rated-book-item-container" key={id}>
-              <button
-                onClick={onClickedTopRatedBook}
-                className="top-rated-card-btn"
-                type="button"
-              >
-                <div className="top-rated-book-image-container">
-                  <img
-                    className="top-rated-book-image"
-                    src={coverPic}
-                    alt={title}
-                  />
-                </div>
-                <h1 className="top-rated-book-name">{title}</h1>
-                <p className="top-rated-book-author">{authorName}</p>
-              </button>
-            </div>
-          )
-        })}
+        {topRatedBooks.map(eachBook => (
+          <EachBooks eachBook={eachBook} key={eachBook.id} />
+        ))}
       </Slider>
     )
   }
@@ -169,7 +142,6 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Header home />
         <div className="home-page-bg-container">
           <h1 className="home-heading" key="title">
             Find Your Next Favorite Books?
@@ -202,7 +174,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     )
   }

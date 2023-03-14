@@ -1,0 +1,17 @@
+.top-rated-book-image {
+  height: 30vh;
+  width: 20vw;
+}
+@media screen and (max-width: 787px) {
+  .top-rated-book-image {
+    max-height: 20vh;
+    width: 25vw;
+    margin-top: 5px;
+    align-items: center;
+  }
+}
+
+.top-rated-book-name {
+  font-size: 15px;
+  font-family: inter;
+}
