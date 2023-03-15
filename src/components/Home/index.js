@@ -8,6 +8,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import Loader from 'react-loader-spinner'
 import EachBooks from '../EachBooks'
 import './index.css'
+import Header from '../Header'
+import Footer from '../Footer'
 
 const topRatedApiStatuses = {
   initial: 'INITIAL',
@@ -142,6 +144,7 @@ class Home extends Component {
   render() {
     return (
       <>
+        <Header home />
         <div className="home-page-bg-container">
           <h1 className="home-heading" key="title">
             Find Your Next Favorite Books?
@@ -174,6 +177,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </>
     )
   }

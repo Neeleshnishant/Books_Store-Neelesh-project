@@ -1,6 +1,7 @@
 .top-rated-book-image {
-  height: 30vh;
+  height: 40vh;
   width: 20vw;
+  border-radius: 10px;
 }
 @media screen and (max-width: 787px) {
   .top-rated-book-image {
@@ -9,6 +10,13 @@
     margin-top: 5px;
     align-items: center;
   }
+}
+
+.top-rated-card-btn {
+  background-color: #ffffff;
+  border: 0px;
+
+  padding: 10px;
 }
 
 .top-rated-book-name {
