@@ -62,11 +62,6 @@ class Header extends Component {
                 Bookshelves
               </li>
             </Link>
-            <Link className="link" to="/favorites">
-              <li className={`list-item bookshelves-tab ${activeFavorite}`}>
-                MyFavorites
-              </li>
-            </Link>
             <li className="list-item">
               <button
                 onClick={this.onClickLogout}
